@@ -1,0 +1,61 @@
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize]
+
+name: UI Lint, Test, Image
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git fetch --depth=1 origin
+      - run: yarn install --frozen-lockfile --check-files
+      - uses: actions/cache@v1
+        id: cache-build
+        with:
+          key: ${{ github.sha }}
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          key: ${{ github.sha }}
+      - run: yarn lint:ci
+
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          key: ${{ github.sha }}
+      - run: yarn test:ci
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Build
+        uses: actions/cache@v1
+        id: restore-build
+        with:
+          key: ${{ github.sha }}
+        run: |
+          yarn build
+          touch ./build/.nojekyll
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: master
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
