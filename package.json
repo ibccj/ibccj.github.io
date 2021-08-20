@@ -1,0 +1,41 @@
+{
+  "name": "whishbox",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint '**/*.{js,jsx}' --quiet --fix",
+    "lint:ci": "eslint --no-color --quiet --ext .js '**/*.js'",
+    "test": "jest --passWithNoTests --config ./jest.config.json",
+    "test:ci": "jest --passWithNoTests --config ./jest.config.json --coverage"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "@svgr/webpack": "^5.3.1",
+    "babel-plugin-styled-components": "^1.11.1",
+    "next": "9.5.2",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "styled-components": "^5.1.1",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^10.4.8",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "jest": "^26.3.0",
+    "prettier": "^2.0.5"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

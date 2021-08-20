@@ -1,0 +1,14 @@
+ node_modules
+.idea
+.git
+.next
+.aws
+jest
+.env.default
+.eslint*
+docker-compose.yml
+.prettierrc.js
+Dockerfile
+jest.config.json
+README.md
+schema.graphql

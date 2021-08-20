@@ -1,0 +1,44 @@
+---
+settings:
+  react:
+    version: detect
+    pragma: React
+    createClass: createReactClass
+env:
+  es6: true
+  browser: true
+  commonjs: true
+  node: true
+  jest: true
+extends:
+  - plugin:react/recommended
+  - eslint:recommended
+  - plugin:prettier/recommended
+  - plugin:react-hooks/recommended
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - react
+  - prettier
+rules:
+  prettier/prettier:
+    - error
+    - singleQuote: true
+  react/react-in-jsx-scope: 'off'
+  react/react-in-jsx-scopeno-cycle: 0
+  import/no-named-as-default: 0
+  react/destructuring-assignment: 0
+  react/forbid-prop-types: 0
+  react/jsx-filename-extension:
+    - 'error'
+    - extensions:
+        - ".js"
+        - ".jsx"
+  no-console: 2
+  import/prefer-default-export: 0
+  no-unused-vars:
+    - 1
+    - argsIgnorePattern: "^_"
