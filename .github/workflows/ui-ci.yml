@@ -48,7 +48,7 @@ jobs:
         id: restore-build
         with:
           key: ${{ github.sha }}
-        run: |
+      - run: |
           yarn build
           touch ./build/.nojekyll
 
