@@ -1,5 +1,5 @@
 module.exports = {
-  webpack: (config, { dev, webpack }) => {
+  webpack: (config, { webpack }) => {
     config.plugins = config.plugins || [];
 
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));

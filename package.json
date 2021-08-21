@@ -20,6 +20,7 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
+    "babel-jest": "^27.0.6",
     "@babel/preset-react": "^7.10.4",
     "@svgr/webpack": "^5.3.1",
     "@testing-library/react": "^10.4.8",
