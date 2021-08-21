@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-name: UI Lint, Test, Image
+name: UI Lint, Test, Deploy
 
 jobs:
   install:
@@ -17,6 +17,7 @@ jobs:
         id: cache-build
         with:
           key: ${{ github.sha }}
+          path: './'
 
   lint:
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
         id: restore-build
         with:
           key: ${{ github.sha }}
+          path: './'
       - run: yarn lint:ci
 
   test:
@@ -36,6 +38,7 @@ jobs:
         id: restore-build
         with:
           key: ${{ github.sha }}
+          path: './'
       - run: yarn test:ci
 
   deploy:
@@ -48,6 +51,7 @@ jobs:
         id: restore-build
         with:
           key: ${{ github.sha }}
+          path: './'
       - run: |
           yarn build
           touch ./build/.nojekyll
