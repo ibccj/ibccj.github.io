@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Input = styled.input`
   width: ${({ wide = false }) => (wide ? '100%' : 'auto')};
-  font-family: 'Montserrat', serif;
+  font-family: 'Ubuntu', serif;
   padding: 7px 10px;
   border-radius: 3px;
   border: 1px solid #b7b2b3;

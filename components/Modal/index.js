@@ -40,7 +40,7 @@ const ModalContainer = styled.div`
 
 const ModalContent = styled(Cell)`
   background-color: white;
-  font-family: 'Montserrat', serif;
+  font-family: 'Ubuntu', serif;
   padding: 20px 10px;
 `;
 
@@ -48,7 +48,7 @@ const ModalTitle = styled.span`
   display: inline-block;
   vertical-align: middle;
   text-transform: uppercase;
-  font-family: 'Montserrat', serif;
+  font-family: 'Ubuntu', serif;
 `;
 
 const CloseButton = styled.button`
