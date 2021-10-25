@@ -1,5 +1,6 @@
 import React from 'react';
 import { Cell, Container } from '../Grid';
+import PropTypes from 'prop-types';
 
 export default function Wrapper({ children }) {
   return (
@@ -14,3 +15,7 @@ export default function Wrapper({ children }) {
     </Container>
   );
 }
+
+Wrapper.propTypes = {
+  children: PropTypes.node
+};
